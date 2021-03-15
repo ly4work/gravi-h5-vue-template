@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Mand Mobile App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "app",
-  components: {
-    HelloWorld
-  }
+  components: {},
 };
 </script>
 
