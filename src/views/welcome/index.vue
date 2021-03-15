@@ -2,7 +2,7 @@
   <div class="hello">
     <h1><span>Welcome To Gravi Cli</span></h1>
     <p>
-      基于vue+mand-mobile的模板库
+      基于 <b>Vue & Mand-Mobile</b>
     </p>
     <br />
     <md-button type="primary" @click="handleToHomePage">开启使用</md-button>

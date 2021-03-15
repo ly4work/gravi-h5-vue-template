@@ -6,12 +6,12 @@
 export default [
   {
     path: "/welcome",
-    component: () => import("@/views/welcome/index"),
+    component: () => import("@/views/welcome/Index"),
     hidden: true,
   },
   {
     path: "/cashier",
-    component: () => import("@/views/cashier/index"),
+    component: () => import("@/views/cashier/Index"),
     hidden: true,
     meta: { title: "收银台", affix: false },
   },
@@ -20,15 +20,24 @@ export default [
     redirect: "/welcome",
   },
   {
-    path: "/home",
-    component: () => import("@/views/home/index"),
+    path: "/index",
+    component: () => import("@/views/index/Index"),
   },
-
-  //   {
-  //     path: "/404",
-  //     component: () => import("@/views/404"),
-  //     hidden: true,
-  //   },
+  {
+    path: "/login",
+    component: () => import("@/views/login/Index"),
+  },
+  {
+    path: "/error",
+    component: () => import("@/views/error/Index"),
+    children: [
+      {
+        path: "404",
+        name: "404",
+        component: () => import("@/views/error/404/Index"),
+      },
+    ],
+  },
   //   {
   //     path: "/home",
   //     component: Layout,
