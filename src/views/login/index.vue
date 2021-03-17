@@ -74,15 +74,15 @@
             <input
               class="ipt"
               v-model="password"
-              :type="pwdShowStatus ? 'password' : 'text'"
+              :type="pwdHideStatus ? 'password' : 'text'"
               ref="mobile"
               minlength="6"
               maxlength="18"
               placeholder="6-18位密码"
             />
-            <div class="pwd-fix" @click="handleCheckPwdShowStatus">
+            <div class="pwd-fix" @click="handleCheckpwdHideStatus">
               <md-icon
-                :name="pwdShowStatus ? 'invisible' : 'visible'"
+                :name="pwdHideStatus ? 'invisible' : 'visible'"
                 size="lg"
               />
             </div>
@@ -110,8 +110,8 @@
           v-if="status === StatusEnum.SMSCodeInputing"
         >
           <!-- <div class="ipt-box">
-            <div class="pwd-fix" @click="handleCheckPwdShowStatus">
-              <md-icon :name="pwdShowStatus ? 'invisible' : 'visible'" size="lg" />
+            <div class="pwd-fix" @click="handleCheckpwdHideStatus">
+              <md-icon :name="pwdHideStatus ? 'invisible' : 'visible'" size="lg" />
             </div>
           </div> -->
           <div class="code-box">
@@ -160,7 +160,7 @@ export default {
       mobile: "",
       password: "",
       code: "",
-      pwdShowStatus: false,
+      pwdHideStatus: true,
     };
   },
   components: {
@@ -185,8 +185,8 @@ export default {
     handlePrev() {
       this.status = this.status - 1;
     },
-    handleCheckPwdShowStatus() {
-      this.pwdShowStatus = !this.pwdShowStatus;
+    handleCheckpwdHideStatus() {
+      this.pwdHideStatus = !this.pwdHideStatus;
     },
   },
 };
@@ -265,13 +265,13 @@ export default {
 }
 .ipt-box {
   display: flex;
-  box-shadow: 0px 0px 20px rgb(212 212 212 / 30%);
+  // box-shadow: 0px 0px 20px rgb(212 212 212 / 30%);
   border-radius: 10px;
   height: 108px;
   width: 100%;
   margin-top: 60px;
   align-items: center;
-  border: 1px solid rgb(195 195 195 / 13%);
+  border: 1px solid rgb(195 195 195 / 33%);
   padding: 0 20px;
   .code {
     font-size: 36px;
