@@ -28,13 +28,17 @@ export default [
     component: () => import("@/views/login/Index"),
   },
   {
+    path: "/demo",
+    component: () => import("@/views/demo/Index"),
+  },
+  {
     path: "/error",
     component: () => import("@/views/error/Index"),
     children: [
       {
         path: "404",
         name: "404",
-        component: () => import("@/views/error/404/Index"),
+        component: () => import("@/views/error/404"),
       },
     ],
   },
