@@ -17,7 +17,7 @@ module.exports = {
             "autoprefixer",
           ]),
         ],
-        import: [resolve("./src/assets/theme.custom")],
+        import: [resolve("./src/styles/theme.custom")],
       },
       postcss: {
         plugins: [
@@ -36,6 +36,15 @@ module.exports = {
         },
       },
     },
+  },
+  chainWebpack: (config) => {
+    config.resolve.alias
+      .set("@", resolve("src"))
+      .set("components", resolve("src/components"))
+      .set("assets", resolve("src/assets"))
+      .set("widgets", resolve("src/widgets"))
+      .set("store", resolve("store"))
+      .set("public", resolve("public"))
   },
   devServer: {
     open: process.platform === "darwin",

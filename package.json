@@ -4,8 +4,15 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "tree": "tree -I 'node_modules|dist|.git|build' -a -L 3",
+    "dev:local": "cross-env vue-cli-service serve --mode local",
+    "dev:dev": "cross-env vue-cli-service serve --mode dev",
+    "dev:test": "cross-env vue-cli-service serve --mode test",
+    "dev:uat": "cross-env vue-cli-service serve --mode uat",
+    "yx-build:dev": "cross-env vue-cli-service build --mode dev",
+    "yx-build:test": "cross-env vue-cli-service build --mode test",
+    "yx-build:uat": "cross-env vue-cli-service build --mode uat",
+    "yx-build:prod": "cross-env vue-cli-service build --mode prod"
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -13,7 +13,7 @@
 import { Button } from "mand-mobile";
 
 export default {
-  name: "HelloWorld",
+  name: "Welcome",
   components: {
     "md-button": Button,
   },
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     handleToHomePage() {
-      this.$router.push("/cashier");
+      this.$router.push("/login");
     },
   },
 };

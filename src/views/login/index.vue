@@ -12,7 +12,7 @@
           class="plh-module plh-phone"
         >
           <div class="logo">
-            <img src="./gravi.svg" alt="" />
+            <img src="@/assets/gravi.svg" alt="gravi-cli" />
           </div>
           <div class="title">请先登录</div>
           <div class="sub-title">输入您的手机号码</div>
@@ -40,11 +40,11 @@
       </div>
     </div>
     <div class="body-card">
-      <div class="plogin-form-content">
+      <div class="plogin-form-content" :class="`offest_${status}`">
         <!-- 输入手机号 -->
         <div
           class="plfc-module plfc-phone"
-          v-if="status === StatusEnum.PhoneInputing"
+          v-if="true || status === StatusEnum.PhoneInputing"
         >
           <div class="ipt-box">
             <div class="code">+86</div>
@@ -68,7 +68,7 @@
         <!-- 输入密码 -->
         <div
           class="plfc-module plfc-phone"
-          v-if="status === StatusEnum.PasswordInputing"
+          v-if="true || status === StatusEnum.PasswordInputing"
         >
           <div class="ipt-box">
             <input
@@ -89,10 +89,12 @@
           </div>
 
           <div class="btn-group">
-            <!-- <md-button class="prev ope-btn" @click="handlePrev">
-              返回
-            </md-button> -->
-            <md-button class="ok ope-btn" type="primary" @click="handleNext">
+            <md-button
+              :loading="isSubmiting"
+              class="ok ope-btn"
+              type="primary"
+              @click="handleSubmit"
+            >
               确定
             </md-button>
           </div>
@@ -107,13 +109,8 @@
         <!-- 验证码登录 -->
         <div
           class="plfc-module plfc-phone"
-          v-if="status === StatusEnum.SMSCodeInputing"
+          v-if="true || status === StatusEnum.SMSCodeInputing"
         >
-          <!-- <div class="ipt-box">
-            <div class="pwd-fix" @click="handleCheckpwdHideStatus">
-              <md-icon :name="pwdHideStatus ? 'invisible' : 'visible'" size="lg" />
-            </div>
-          </div> -->
           <div class="code-box">
             <md-codebox v-model="code" :maxlength="6" />
           </div>
@@ -152,7 +149,7 @@ const StatusEnum = {
   SMSCodeInputing: 2,
 };
 export default {
-  name: "HelloWorld",
+  name: "Login",
   data() {
     return {
       status: StatusEnum.PhoneInputing,
@@ -161,6 +158,7 @@ export default {
       password: "",
       code: "",
       pwdHideStatus: true,
+      isSubmiting: false,
     };
   },
   components: {
@@ -184,6 +182,13 @@ export default {
     },
     handlePrev() {
       this.status = this.status - 1;
+    },
+    handleSubmit() {
+      this.isSubmiting = true;
+      setTimeout(() => {
+        this.isSubmiting = false;
+        this.$router.push("/index");
+      }, 2000);
     },
     handleCheckpwdHideStatus() {
       this.pwdHideStatus = !this.pwdHideStatus;
@@ -226,8 +231,24 @@ export default {
     margin-bottom: 20px;
   }
 }
+.plogin-form-content {
+  display: flex;
+  transition: all 0.2s ease-in-out;
+}
+
+.generate-columns(2);
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .offest_@{i} {
+    transform: translateX(-(@i) * 100%);
+    // width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}
+
 .plfc-module {
   padding: 0 50px;
+  width: 100%;
+  flex: none;
 }
 .body-card {
   border-top-left-radius: 40px;
@@ -238,6 +259,7 @@ export default {
   z-index: 2;
   background: #fff;
   padding-top: 20px;
+  overflow-x: hidden;
 }
 .mini-t {
   font-size: 28px;
