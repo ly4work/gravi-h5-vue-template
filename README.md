@@ -1,4 +1,17 @@
+<hr>
+<p>
+  <a><img src="https://img.shields.io/github/issues/ly4work/gravi-h5-vue-template.svg" /></a>
+  <a><img src="https://img.shields.io/github/forks/ly4work/gravi-h5-vue-template.svg"  /></a>
+  <a><img src="https://img.shields.io/github/stars/ly4work/gravi-h5-vue-template.svg"  /></a>
+  <a><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" /></a>
+  <a><img src="https://img.shields.io/badge/build-passing-green.svg" /></a>
+  <!-- <a><img src="https://img.shields.io/npm/v/gravi-cli.svg" /></a> -->
+</p>
+<hr>
+
 # gravi-h5-vue-template
+
+> 移动端h5-vue模板，基于 Vue-cli/Mand
 
 ### ✨ 基础核心依赖
 
