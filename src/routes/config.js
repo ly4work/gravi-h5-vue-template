@@ -6,34 +6,50 @@
 export default [
   {
     path: "/welcome",
-    component: () => import("@/views/welcome/Index"),
+    component: () => import("@/views/welcome/index"),
     hidden: true,
   },
-  {
-    path: "/cashier",
-    component: () => import("@/views/cashier/Index"),
-    hidden: true,
-    meta: { title: "收银台", affix: false },
-  },
+
   {
     path: "/",
     redirect: "/welcome",
   },
   {
     path: "/index",
-    component: () => import("@/views/index/Index"),
+    component: () => import("@/views/index/index"),
+    children: [
+      {
+        path: "/index/home",
+        component: () => import("@/views/index/home/index"),
+        meta: { title: "首页", affix: false },
+      },
+      {
+        path: "/index/cashier",
+        component: () => import("@/views/index/cashier/index"),
+        // hidden: true,
+        meta: { title: "收银台", affix: false },
+      },
+      {
+        path: "/index/tab-picker",
+        component: () => import("@/views/index/tab-picker/index"),
+        // hidden: true,
+        meta: { title: "频道选择", affix: false },
+      },
+      {
+        path: "/index/charts",
+        component: () => import("@/views/index/charts/index"),
+        // hidden: true,
+        meta: { title: "图表", affix: false },
+      },
+    ],
   },
   {
     path: "/login",
-    component: () => import("@/views/login/Index"),
-  },
-  {
-    path: "/demo",
-    component: () => import("@/views/demo/Index"),
+    component: () => import("@/views/login/index"),
   },
   {
     path: "/error",
-    component: () => import("@/views/error/Index"),
+    component: () => import("@/views/error/index"),
     children: [
       {
         path: "404",

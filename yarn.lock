@@ -5442,10 +5442,10 @@ make-dir@^3.0.2, make-dir@^3.1.0:
   dependencies:
     semver "^6.0.0"
 
-mand-mobile@^2.5.1:
-  version "2.5.17"
-  resolved "https://registry.npm.taobao.org/mand-mobile/download/mand-mobile-2.5.17.tgz?cache=0&sync_timestamp=1614669308349&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmand-mobile%2Fdownload%2Fmand-mobile-2.5.17.tgz#274db85946414267ff0d8815ac27218a7b4a60e6"
-  integrity sha1-J024WUZBQmf/DYgVrCchintKYOY=
+mand-mobile@^2.5.20:
+  version "2.5.20"
+  resolved "https://registry.npmjs.org/mand-mobile/-/mand-mobile-2.5.20.tgz#3833c7db714178ad9bea94aef4cfab6ce20ca257"
+  integrity sha512-WikxvkXtxLUv2JRCXl8iBiu3Txt4ba8OTzEyXUJxD4iW82sagtW2j/kbba02CRv04FDYcA06T2br3SVgfi8tLA==
 
 map-cache@^0.2.2:
   version "0.2.2"

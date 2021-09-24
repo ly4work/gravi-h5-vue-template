@@ -187,7 +187,7 @@ export default {
       this.isSubmiting = true;
       setTimeout(() => {
         this.isSubmiting = false;
-        this.$router.push("/index");
+        this.$router.push("/index/home");
       }, 2000);
     },
     handleCheckpwdHideStatus() {

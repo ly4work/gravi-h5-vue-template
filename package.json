@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "mand-mobile": "^2.5.1",
+    "mand-mobile": "^2.5.20",
     "normalize.css": "^8.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.5.1"
